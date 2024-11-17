@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app # Mount the current directory to the app directory in the container
+      - /usr/src/app/node_modules # Ensure node_modules are not overwritten
+    environment:
+      - NODE_ENV=development
